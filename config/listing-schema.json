@@ -1,0 +1,22 @@
+{
+  "name": "gaadicheck.used-car-listing.v1",
+  "required": ["title", "price", "year", "km", "fuel", "location", "seller", "posted", "description", "photos", "url"],
+  "types": {
+    "title": "string",
+    "price": "number",
+    "year": "number",
+    "km": "number",
+    "fuel": "string",
+    "location": "string",
+    "seller": "string",
+    "posted": "string",
+    "description": "string",
+    "photos": "number",
+    "url": "string"
+  },
+  "drift_policy": {
+    "missing_required_field": "repair",
+    "type_mismatch": "repair",
+    "empty_required_field": "review"
+  }
+}

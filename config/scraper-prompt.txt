@@ -1,0 +1,22 @@
+Extract every used-car listing visible on the target marketplace category page.
+
+Return one JSON object per listing with exactly these fields:
+- title: listing title as displayed
+- price: numeric asking price in INR
+- year: model/manufacture year as a number
+- km: kilometers driven as a number
+- fuel: fuel type
+- location: listing location
+- seller: seller type, normalized to Dealer or Individual when possible
+- posted: posted date/time text
+- description: complete visible description text
+- photos: number of listing photos visible/available
+- url: canonical listing URL
+
+Rules:
+1. Do not invent missing values. Use null when a value cannot be extracted.
+2. Preserve the listing's original meaning; normalize only formatting and numeric fields.
+3. Return all listings on the page, not just the first few.
+4. Deduplicate by canonical listing URL.
+5. If the page structure changes, prioritize semantic labels and visible listing content over fragile CSS class names.
+6. Output valid JSON only.
